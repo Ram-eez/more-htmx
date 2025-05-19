@@ -10,4 +10,6 @@ func RegisterRoutes(router *gin.Engine) {
 	router.Static("/static", "./static")
 
 	router.GET("/", handlers.RenderCounter)
+
+	router.POST("/increment", handlers.IncrementCounter)
 }

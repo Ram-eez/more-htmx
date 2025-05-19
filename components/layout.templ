@@ -1,12 +1,20 @@
 package components
 
 
-
-templ CounterExample() {
+templ CounterExample(count int64) {
     @Layout(){
-        <div>
-            <h1>Hello component1 here</h1>
+        <div id="counter">
+            <p>Current count: { count }</p>
+            <form hx-post="/increment" hx-target="#counter" hx-swap="outerHTML">
+                <button type="submit">+1</button>
+            </form>
         </div>
+    }
+}
+
+templ MultiComponents(count int64) {
+    @Layout(){
+        @CounterExample(count)
     }
 }
 
@@ -17,9 +25,6 @@ templ Layout() {
             <title>HTMX Counter</title>
         </head>
         <body>
-            <div>
-                <h1>example data</h1>
-            </div>
             { children... }
         </body>
     </html>

@@ -17,7 +17,7 @@ func RenderComponents(c *gin.Context) {
 func IncrementCounter(c *gin.Context) {
 	NewCount++
 
-	components.MultiComponents(NewCount).Render(c.Request.Context(), c.Writer)
+	components.CounterComponents(NewCount).Render(c.Request.Context(), c.Writer)
 }
 
 func ChangeClickContent(c *gin.Context) {
@@ -25,5 +25,5 @@ func ChangeClickContent(c *gin.Context) {
 }
 
 func RenderMouseComponent(c *gin.Context) {
-	components.MultiComponents(NewCount).Render(c.Request.Context(), c.Writer)
+	components.MouseClickComponents().Render(c.Request.Context(), c.Writer)
 }

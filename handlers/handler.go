@@ -6,6 +6,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func RenderHome(c *gin.Context) {
-	components.Layout().Render(c.Request.Context(), c.Writer)
+func RenderCounter(c *gin.Context) {
+	components.CounterExample().Render(c.Request.Context(), c.Writer)
 }

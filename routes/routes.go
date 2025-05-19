@@ -9,5 +9,5 @@ import (
 func RegisterRoutes(router *gin.Engine) {
 	router.Static("/static", "./static")
 
-	router.GET("/", handlers.RenderHome)
+	router.GET("/", handlers.RenderCounter)
 }

@@ -9,15 +9,13 @@ import (
 var NewCount int64
 
 func RenderComponents(c *gin.Context) {
-	components.CounterExample(NewCount).Render(c.Request.Context(), c.Writer)
-
-	components.MouseClick().Render(c.Request.Context(), c.Writer)
+	components.Page(NewCount).Render(c.Request.Context(), c.Writer)
 }
 
 func IncrementCounter(c *gin.Context) {
 	NewCount++
 
-	components.CounterComponents(NewCount).Render(c.Request.Context(), c.Writer)
+	components.CounterExample(NewCount).Render(c.Request.Context(), c.Writer)
 }
 
 func ChangeClickContent(c *gin.Context) {
@@ -25,5 +23,5 @@ func ChangeClickContent(c *gin.Context) {
 }
 
 func RenderMouseComponent(c *gin.Context) {
-	components.MouseClickComponents().Render(c.Request.Context(), c.Writer)
+	components.MouseClick().Render(c.Request.Context(), c.Writer)
 }

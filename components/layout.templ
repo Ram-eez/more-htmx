@@ -1,46 +1,18 @@
 package components
 
-
-templ CounterExample(count int64) {
-    @Layout(){
-        <div id="counter">
-            <p>Current count: { count }</p>
-            <form hx-post="/increment" hx-target="#counter" hx-swap="outerHTML">
-                <button type="submit">+1</button>
-            </form>
-        </div>
-    }
-}
-
-templ MouseClick() {
-    @Layout(){
-        <div id="mouseClick" hx-post="/mouseclicked" hx-target="#mouseClick" hx-trigger="click" hx-swap="outerHTML">
-            <h1>Click Me!</h1>
-        </div>
-    }
-}
-
-templ CounterComponents(count int64) {
-    @Layout(){
-        @CounterExample(count)
-    }
-}
-
-templ MouseClickComponents() {
-    @Layout(){
-        @MouseClick()
-    }
-}
-
-
 templ Layout() {
     <html>
         <head>
             <script src="/static/js/htmx.min.js"></script>
-            <title>HTMX Counter</title>
+            <title>HTMX Examples</title>
         </head>
         <body>
             { children... }
         </body>
     </html>
+}
+
+templ Page(count int64) {
+    @CounterExample(count)
+    @MouseClick()
 }

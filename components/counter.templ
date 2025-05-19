@@ -1,0 +1,12 @@
+package components
+
+templ CounterExample(count int64) {
+    @Layout(){
+        <div id="counter">
+            <p>Current count: { count }</p>
+            <form hx-post="/increment" hx-target="#counter" hx-swap="outerHTML">
+                <button type="submit">+1</button>
+            </form>
+        </div>
+    }
+}

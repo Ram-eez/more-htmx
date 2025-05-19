@@ -13,6 +13,8 @@ templ Layout() {
 }
 
 templ Page(count int64) {
-    @CounterExample(count)
-    @MouseClick()
+    @Layout() {
+        @CounterExample(count)
+        @MouseClick()
+    }
 }

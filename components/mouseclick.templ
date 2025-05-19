@@ -2,11 +2,11 @@ package components
 
 
 templ MouseClick() {
-    @Layout(){
+
         <div id="mouseClick" hx-post="/mouseclicked" hx-target="#mouseClick" hx-trigger="click" hx-swap="outerHTML">
             <h1>Click Me!</h1>
         </div>
-    }
+    
 }
 
 templ MouseClickContent() {

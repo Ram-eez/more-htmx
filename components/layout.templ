@@ -1,0 +1,26 @@
+package components
+
+
+
+templ CounterExample() {
+    @Layout(){
+        <div>
+            
+        </div>
+    }
+}
+
+templ Layout() {
+    <html>
+        <head>
+            <script src="/static/js/htmx.min.js"></script>
+            <title>HTMX Counter</title>
+        </head>
+        <body>
+            <div>
+                <h1>example data</h1>
+            </div>
+            { children... }
+        </body>
+    </html>
+}

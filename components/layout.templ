@@ -12,9 +12,16 @@ templ CounterExample(count int64) {
     }
 }
 
+templ MouseClick() {
+    <div id="mouseClick" hx-post="/mouseclicked" hx-target="#mouseClick" hx-trigger="click" hx-swap="outerHTML">
+        <h1>Click Me!</h1>
+    </div>
+}
+
 templ MultiComponents(count int64) {
     @Layout(){
         @CounterExample(count)
+        @MouseClick()
     }
 }
 

@@ -9,7 +9,8 @@ import (
 func RegisterRoutes(router *gin.Engine) {
 	router.Static("/static", "./static")
 
-	router.GET("/", handlers.RenderCounter)
+	router.GET("/", handlers.RenderComponents)
 
 	router.POST("/increment", handlers.IncrementCounter)
+	router.POST("/mouseclicked", handlers.ChangeClickContent)
 }

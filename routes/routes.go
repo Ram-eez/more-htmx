@@ -13,4 +13,6 @@ func RegisterRoutes(router *gin.Engine) {
 
 	router.POST("/increment", handlers.IncrementCounter)
 	router.POST("/mouseclicked", handlers.ChangeClickContent)
+
+	router.GET("/news", handlers.GetNews)
 }

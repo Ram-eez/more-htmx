@@ -8,14 +8,14 @@ type News struct {
 var SomeNews = []News{
 	{
 		Headline: "news1 headline",
-		Content:  "something something something",
+		Content:  "hello",
 	},
 	{
 		Headline: "news2 headline",
-		Content:  "something something something",
+		Content:  "ur not",
 	},
 	{
 		Headline: "news3 headline",
-		Content:  "something something something",
+		Content:  "nice",
 	},
 }

@@ -4,13 +4,13 @@ import "more-htmx/models"
 
 templ NewsExample() {
     <h1>Live news</h1>
-    <div id="newsComponent" hx-get="/news" hx-trigger="every 2s" hx-target="newsComponent" hx-swap="outerHTML">
+    <div id="newsComponent" hx-get="/news" hx-trigger="every 2s" hx-target="#newsComponent" hx-swap="outerHTML">
         <p>Loading News</p>
     </div>
 }
 
 templ NewNews(news []models.News, index int64) {
-    <div id="newsComponent">
+    <div id="newsComponent" hx-get="/news" hx-trigger="every 2s" hx-target="#newsComponent" hx-swap="outerHTML">
         if len(news) > 0 {
             <h2>{ news[index].Headline }</h2>
             <p>{ news[index].Content }</p>

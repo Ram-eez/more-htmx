@@ -31,7 +31,7 @@ func NewsExample() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<h1>Live news</h1><div id=\"newsComponent\" hx-get=\"/news\" hx-trigger=\"every 2s\" hx-target=\"newsComponent\" hx-swap=\"outerHTML\"><p>Loading News</p></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<h1>Live news</h1><div id=\"newsComponent\" hx-get=\"/news\" hx-trigger=\"every 2s\" hx-target=\"#newsComponent\" hx-swap=\"outerHTML\"><p>Loading News</p></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -60,7 +60,7 @@ func NewNews(news []models.News, index int64) templ.Component {
 			templ_7745c5c3_Var2 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "<div id=\"newsComponent\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "<div id=\"newsComponent\" hx-get=\"/news\" hx-trigger=\"every 2s\" hx-target=\"#newsComponent\" hx-swap=\"outerHTML\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

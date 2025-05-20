@@ -1,0 +1,23 @@
+package components
+
+import "strconv"
+import "fmt"
+
+templ ProgressBar(percent int) {
+    if percent < 100 {
+        <div hx-get="/progress" hx-trigger="load delay:1s" hx-swap="outerHTML">
+            <div style="width: 300px; background-color: #eee; border-radius:5px">
+                <div style={ fmt.Sprintf("width: %d%%; height: 20px; background-color: #4CAF50; border-radius: 5px;", percent) }>
+                </div>
+            </div>
+                <p>{ strconv.Itoa(percent) }%</p>
+        </div>
+    } else {
+        <div>
+            <div style="width: 300px; background-color: #eee; border-radius:5px">
+                <div style="width: 100%; height: 20px; background-color: #4CAF50; border-radius: 5px;"></div>
+            </div>
+            <p>100% Complete</p>
+        </div>
+    }
+}

@@ -12,10 +12,11 @@ templ Layout() {
     </html>
 }
 
-templ Page(count int64) {
+templ Page(count int64, progress int) {
     @Layout() {
         @CounterExample(count)
         @MouseClick()
         @NewsExample()
+        @ProgressBar(progress)
     }
 }

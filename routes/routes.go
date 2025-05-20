@@ -15,4 +15,6 @@ func RegisterRoutes(router *gin.Engine) {
 	router.POST("/mouseclicked", handlers.ChangeClickContent)
 
 	router.GET("/news", handlers.GetNews)
+	router.GET("/progress", handlers.ProgressHandler)
+	router.GET("/reset", handlers.ResetProgressBar)
 }

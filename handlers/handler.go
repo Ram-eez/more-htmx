@@ -11,7 +11,7 @@ var NewCount int64
 var CurrentIndex int
 
 func RenderComponents(c *gin.Context) {
-	components.Page(NewCount).Render(c.Request.Context(), c.Writer)
+	components.Page(NewCount, 0).Render(c.Request.Context(), c.Writer)
 }
 
 func IncrementCounter(c *gin.Context) {
@@ -37,4 +37,23 @@ func GetNews(c *gin.Context) {
 	CurrentIndex = (CurrentIndex + 1) % len(models.SomeNews)
 
 	components.NewNews(models.SomeNews, int64(index)).Render(c.Request.Context(), c.Writer)
+}
+
+var CurrentProgress int
+
+func RenderProgressBar(c *gin.Context) {
+	components.ProgressBar(CurrentProgress).Render(c.Request.Context(), c.Writer)
+}
+
+func ProgressHandler(c *gin.Context) {
+	if CurrentProgress < 100 {
+		CurrentProgress += 10
+	}
+
+	components.ProgressBar(CurrentProgress).Render(c.Request.Context(), c.Writer)
+}
+
+func ResetProgressBar(c *gin.Context) {
+	CurrentProgress = 0
+	c.Redirect(302, "/")
 }

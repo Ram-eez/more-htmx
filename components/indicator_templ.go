@@ -29,7 +29,7 @@ func ButtonExample() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div><button hx-get=\"/click\">Click Me! <img class=\"htmx-indicator\" src=\"/__Iphone-spinner-1.gif\"></button></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div><button hx-get=\"/click\" hx-target=\"#result\" hx-swap=\"outerHTML\" hx-indicator=\"#spinner\">Click Me! <img id=\"spinner\" class=\"htmx-indicator\" src=\"/static/img/__Iphone-spinner-1.gif\"></button><div id=\"result\"></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

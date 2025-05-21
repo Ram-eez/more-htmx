@@ -2,10 +2,11 @@ package components
 
 templ ButtonExample() {
     <div>
-        <button hx-get="/click" hx-target="#result" hx-swap="outerHTML">
+        <button hx-get="/click" hx-target="#result" hx-swap="outerHTML" hx-indicator="#spinner">
             Click Me!
-            <img class="htmx-indicator" src="/__Iphone-spinner-1.gif">
+            <img id="spinner" class="htmx-indicator" src="/static/img/__Iphone-spinner-1.gif">
         </button>
+        <div id="result"></div>
     </div>
 }
 

@@ -1,0 +1,16 @@
+package components
+
+templ ButtonExample() {
+    <div>
+        <button hx-get="/click" hx-target="#result" hx-swap="outerHTML">
+            Click Me!
+            <img class="htmx-indicator" src="/__Iphone-spinner-1.gif">
+        </button>
+    </div>
+}
+
+templ ButtonContent() {
+    <div>
+        <h1>Iphone</h1>
+    </div>
+}

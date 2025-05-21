@@ -3,6 +3,7 @@ package handlers
 import (
 	"more-htmx/components"
 	"more-htmx/models"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -56,4 +57,13 @@ func ProgressHandler(c *gin.Context) {
 func ResetProgressBar(c *gin.Context) {
 	CurrentProgress = 0
 	c.Redirect(302, "/")
+}
+
+func RenderButton(c *gin.Context) {
+	components.ButtonExample().Render(c.Request.Context(), c.Writer)
+}
+
+func LoadButtonContent(c *gin.Context) {
+	time.Sleep(3 * time.Second)
+	components.ButtonContent().Render(c.Request.Context(), c.Writer)
 }

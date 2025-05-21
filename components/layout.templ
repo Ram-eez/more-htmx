@@ -5,6 +5,15 @@ templ Layout() {
         <head>
             <script src="/static/js/htmx.min.js"></script>
             <title>HTMX Examples</title>
+            <style>
+			.htmx-indicator {
+				opacity: 0;
+				transition: opacity 200ms ease-in-out;
+			}
+			.htmx-request .htmx-indicator {
+				opacity: 1;
+			}
+		</style>
         </head>
         <body>
             { children... }
@@ -18,5 +27,6 @@ templ Page(count int64, progress int) {
         @MouseClick()
         @NewsExample()
         @ProgressBar(progress)
+        @ButtonExample()
     }
 }

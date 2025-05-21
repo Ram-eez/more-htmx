@@ -4,7 +4,7 @@ import "more-htmx/models"
 
 templ NewsExample() {
     <h1>Live news</h1>
-    <div id="newsComponent" hx-get="/news" hx-trigger="every 2s" hx-target="#newsComponent" hx-swap="outerHTML">
+    <div id="newsComponent" hx-get="/news" hx-trigger="every 2s" hx-target="#newsComponent" hx-swap="outerHTML swap:1s">
         <p>Loading News</p>
     </div>
 }

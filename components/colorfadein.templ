@@ -1,0 +1,7 @@
+package components
+
+templ ColorDemo(color string) {
+    <div id="color-demo" class="smooth" style={ "color:" + color } hx-get="/colors" hx-swap="outerHTML" hx-trigger="every 1s">
+        Color swap demo
+    </div>
+}

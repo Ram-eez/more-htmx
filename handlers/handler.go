@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"math/rand"
 	"more-htmx/components"
 	"more-htmx/models"
 	"time"
@@ -12,7 +13,7 @@ var NewCount int64
 var CurrentIndex int
 
 func RenderComponents(c *gin.Context) {
-	components.Page(NewCount, 0).Render(c.Request.Context(), c.Writer)
+	components.Page(NewCount, 0, "red").Render(c.Request.Context(), c.Writer)
 }
 
 func IncrementCounter(c *gin.Context) {
@@ -66,4 +67,14 @@ func RenderButton(c *gin.Context) {
 func LoadButtonContent(c *gin.Context) {
 	time.Sleep(3 * time.Second)
 	components.ButtonContent().Render(c.Request.Context(), c.Writer)
+}
+
+var colors = []string{"red", "blue", "green", "orange", "purple", "teal"}
+
+func GetRandomColor() string {
+	return colors[rand.Intn(len(colors))]
+}
+
+func RenderColorDemo(c *gin.Context) {
+	components.ColorDemo(GetRandomColor()).Render(c.Request.Context(), c.Writer)
 }

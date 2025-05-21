@@ -13,6 +13,9 @@ templ Layout() {
 			.htmx-request .htmx-indicator {
 				opacity: 1;
 			}
+            .smooth {
+                transition: all 1s ease-in;
+            }
 		</style>
         </head>
         <body>
@@ -21,12 +24,13 @@ templ Layout() {
     </html>
 }
 
-templ Page(count int64, progress int) {
+templ Page(count int64, progress int, color string) {
     @Layout() {
         @CounterExample(count)
         @MouseClick()
         @NewsExample()
         @ProgressBar(progress)
         @ButtonExample()
+        @ColorDemo(color)
     }
 }

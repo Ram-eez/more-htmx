@@ -18,4 +18,5 @@ func RegisterRoutes(router *gin.Engine) {
 	router.GET("/progress", handlers.ProgressHandler)
 	router.GET("/reset", handlers.ResetProgressBar)
 	router.GET("/click", handlers.LoadButtonContent)
+	router.GET("/colors", handlers.RenderColorDemo)
 }

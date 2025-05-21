@@ -1,8 +1,12 @@
 package components
 
+
+// innerHTML replaces the entire div without its attributes 
+// outerHTML replaces the entire div along with its attributes
+
 templ ButtonExample() {
     <div>
-        <button hx-get="/click" hx-target="#result" hx-swap="outerHTML" hx-indicator="#spinner">
+        <button hx-get="/click" hx-target="#result" hx-indicator="#spinner">
             Click Me!
             <img id="spinner" class="htmx-indicator" src="/static/img/__Iphone-spinner-1.gif">
         </button>

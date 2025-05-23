@@ -1,0 +1,31 @@
+package components
+
+templ OobDiv() {
+    <div id="main" style="border: 2px solid blue; padding: 10px;">
+    <button 
+        hx-get="/refresh" 
+        hx-target="#main" 
+        hx-swap="innerHTML"
+        hx-indicator="#loading">
+            Refresh Main Content
+    </button>
+    </div>
+
+    <div id="message" style="margin-top: 10px; border: 2px dashed gray; padding: 10px;">
+        Message: <strong>Old message</strong>
+    </div>
+
+    <div id="loading" class="htmx-indicator" style="display: none;">Loading...</div>
+}
+
+
+templ ResponseDiv() {
+    <div>✅ New main content loaded!</div>
+
+    <div 
+        id="message" 
+        hx-swap-oob="true" 
+        style="margin-top: 10px; border: 2px dashed green; padding: 10px;">   
+            🟢OOB Message Updated!
+    </div>
+}

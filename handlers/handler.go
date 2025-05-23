@@ -75,3 +75,7 @@ func GetRestoreButton(c *gin.Context) {
 func GetDeleteButton(c *gin.Context) {
 	components.SwapContent(false).Render(c.Request.Context(), c.Writer)
 }
+
+func OobSwap(c *gin.Context) {
+	components.ResponseDiv().Render(c.Request.Context(), c.Writer)
+}

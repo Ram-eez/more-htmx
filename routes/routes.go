@@ -23,4 +23,6 @@ func RegisterRoutes(router *gin.Engine) {
 
 	router.POST("/restore_button", handlers.GetDeleteButton)
 	router.POST("/delete_button", handlers.GetRestoreButton)
+
+	router.GET("/refresh", handlers.OobSwap)
 }

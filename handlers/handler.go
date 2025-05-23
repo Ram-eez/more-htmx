@@ -27,14 +27,6 @@ func ChangeClickContent(c *gin.Context) {
 	components.MouseClickContent().Render(c.Request.Context(), c.Writer)
 }
 
-func RenderMouseComponent(c *gin.Context) {
-	components.MouseClick().Render(c.Request.Context(), c.Writer)
-}
-
-func NewsComponent(c *gin.Context) {
-	components.NewsExample().Render(c.Request.Context(), c.Writer)
-}
-
 func GetNews(c *gin.Context) {
 	index := CurrentIndex
 	CurrentIndex = (CurrentIndex + 1) % len(models.SomeNews)
@@ -43,10 +35,6 @@ func GetNews(c *gin.Context) {
 }
 
 var CurrentProgress int
-
-func RenderProgressBar(c *gin.Context) {
-	components.ProgressBar(CurrentProgress).Render(c.Request.Context(), c.Writer)
-}
 
 func ProgressHandler(c *gin.Context) {
 	if CurrentProgress < 100 {
@@ -59,10 +47,6 @@ func ProgressHandler(c *gin.Context) {
 func ResetProgressBar(c *gin.Context) {
 	CurrentProgress = 0
 	c.Redirect(302, "/")
-}
-
-func RenderButton(c *gin.Context) {
-	components.ButtonExample().Render(c.Request.Context(), c.Writer)
 }
 
 func LoadButtonContent(c *gin.Context) {

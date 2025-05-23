@@ -1,0 +1,16 @@
+package components
+
+
+templ SwapContent(isDeleted bool) {
+    <div id="button-container-2" class="fade">
+        if isDeleted {
+            <button class="restore-btn" hx-post="/restore_button" hx-swap="outerHTML swap:1s" hx-target="#button-container-2">
+                RESTORE ME
+            </button>
+        } else {
+            <button class="delete-btn" hx-post="/delete_button" hx-swap="outerHTML swap:1s" hx-target="#button-container-2">
+                DELETE ME
+            </button>
+        }
+    </div>
+}

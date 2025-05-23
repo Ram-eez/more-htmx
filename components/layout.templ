@@ -10,16 +10,30 @@ templ Layout() {
 				opacity: 0;
 				transition: opacity 200ms ease-in-out;
 			}
+
 			.htmx-request .htmx-indicator {
 				opacity: 1;
 			}
+
             .smooth {
                 transition: all 1s ease-in;
             }
-            .fade-out.htmx-swapping {
-            opacity: 0;
-            transition: opacity 1s ease-out;
+
+           .fade-out.htmx-swapping {
+                opacity: 0;
+                transition: opacity 0.5s ease-out;
             }
+
+            .fade {
+                transition: opacity 0.5s ease;
+            }
+            .fade.htmx-swapping {
+                opacity: 0;
+            }
+            .fade:not(.htmx-swapping) {
+                opacity: 1;
+            }
+            
 		</style>
         </head>
         <body>
@@ -28,7 +42,7 @@ templ Layout() {
     </html>
 }
 
-templ Page(count int64, progress int, color string) {
+templ Page(count int64, progress int, color string, isDeleted bool) {
     @Layout() {
         @CounterExample(count)
         @MouseClick()
@@ -37,5 +51,6 @@ templ Page(count int64, progress int, color string) {
         @ButtonExample()
         @ColorDemo(color)
         @DeleteButton()
+        @SwapContent(isDeleted)
     }
 }

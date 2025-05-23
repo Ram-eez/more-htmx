@@ -14,7 +14,7 @@ var NewCount int64
 var CurrentIndex int
 
 func RenderComponents(c *gin.Context) {
-	components.Page(NewCount, 0, "red").Render(c.Request.Context(), c.Writer)
+	components.Page(NewCount, 0, "red", false).Render(c.Request.Context(), c.Writer)
 }
 
 func IncrementCounter(c *gin.Context) {
@@ -66,4 +66,12 @@ func RenderColorDemo(c *gin.Context) {
 
 func DeleteDiv(c *gin.Context) {
 	c.Status(http.StatusOK)
+}
+
+func GetRestoreButton(c *gin.Context) {
+	components.SwapContent(true).Render(c.Request.Context(), c.Writer)
+}
+
+func GetDeleteButton(c *gin.Context) {
+	components.SwapContent(false).Render(c.Request.Context(), c.Writer)
 }

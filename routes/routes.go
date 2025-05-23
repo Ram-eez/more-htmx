@@ -20,4 +20,7 @@ func RegisterRoutes(router *gin.Engine) {
 	router.GET("/click", handlers.LoadButtonContent)
 	router.GET("/colors", handlers.RenderColorDemo)
 	router.DELETE("/fade_out_demo", handlers.DeleteDiv)
+
+	router.POST("/restore_button", handlers.GetDeleteButton)
+	router.POST("/delete_button", handlers.GetRestoreButton)
 }

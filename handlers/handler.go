@@ -4,6 +4,7 @@ import (
 	"math/rand"
 	"more-htmx/components"
 	"more-htmx/models"
+	"net/http"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -77,4 +78,8 @@ func GetRandomColor() string {
 
 func RenderColorDemo(c *gin.Context) {
 	components.ColorDemo(GetRandomColor()).Render(c.Request.Context(), c.Writer)
+}
+
+func DeleteDiv(c *gin.Context) {
+	c.Status(http.StatusOK)
 }

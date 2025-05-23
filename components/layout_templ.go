@@ -29,7 +29,7 @@ func Layout() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<html><head><script src=\"/static/js/htmx.min.js\"></script><title>HTMX Examples</title><style>\n\t\t\t.htmx-indicator {\n\t\t\t\topacity: 0;\n\t\t\t\ttransition: opacity 200ms ease-in-out;\n\t\t\t}\n\t\t\t.htmx-request .htmx-indicator {\n\t\t\t\topacity: 1;\n\t\t\t}\n            .smooth {\n                transition: all 1s ease-in;\n            }\n\t\t</style></head><body>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<html><head><script src=\"/static/js/htmx.min.js\"></script><title>HTMX Examples</title><style>\n\t\t\t.htmx-indicator {\n\t\t\t\topacity: 0;\n\t\t\t\ttransition: opacity 200ms ease-in-out;\n\t\t\t}\n\t\t\t.htmx-request .htmx-indicator {\n\t\t\t\topacity: 1;\n\t\t\t}\n            .smooth {\n                transition: all 1s ease-in;\n            }\n            .fade-out.htmx-swapping {\n            opacity: 0;\n            transition: opacity 1s ease-out;\n            }\n\t\t</style></head><body>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -119,6 +119,14 @@ func Page(count int64, progress int, color string) templ.Component {
 				return templ_7745c5c3_Err
 			}
 			templ_7745c5c3_Err = ColorDemo(color).Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 8, " ")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = DeleteButton().Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

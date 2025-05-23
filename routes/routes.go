@@ -19,4 +19,5 @@ func RegisterRoutes(router *gin.Engine) {
 	router.GET("/reset", handlers.ResetProgressBar)
 	router.GET("/click", handlers.LoadButtonContent)
 	router.GET("/colors", handlers.RenderColorDemo)
+	router.DELETE("/fade_out_demo", handlers.DeleteDiv)
 }

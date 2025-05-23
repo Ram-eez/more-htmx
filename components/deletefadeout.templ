@@ -1,0 +1,9 @@
+package components
+
+templ DeleteButton() {
+    <div id="button-container" class="fade-out">  <!-- Move class to the container -->
+        <button hx-delete="/fade_out_demo" hx-swap="outerHTML swap:1s" hx-target="#button-container">
+            FADE ME OUT
+        </button>
+    </div>
+}

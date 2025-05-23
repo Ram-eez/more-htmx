@@ -16,6 +16,10 @@ templ Layout() {
             .smooth {
                 transition: all 1s ease-in;
             }
+            .fade-out.htmx-swapping {
+            opacity: 0;
+            transition: opacity 1s ease-out;
+            }
 		</style>
         </head>
         <body>
@@ -32,5 +36,6 @@ templ Page(count int64, progress int, color string) {
         @ProgressBar(progress)
         @ButtonExample()
         @ColorDemo(color)
+        @DeleteButton()
     }
 }

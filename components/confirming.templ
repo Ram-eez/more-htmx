@@ -1,0 +1,9 @@
+package components 
+
+templ DeleteAdnConfirm() {
+    <div id="container">
+        <form hx-delete="/fade_out_demo" hx-confirm="Are you Sure?" hx-swap="outerHTML" hx-target="#container">
+            <button type="submit">Delete Account</button>
+        </form>
+    </div>
+}

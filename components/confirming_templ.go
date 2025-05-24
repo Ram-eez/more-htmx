@@ -8,6 +8,13 @@ package components
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
+//	templ DeleteAdnConfirm() {
+//	    <div id="container">
+//	        <form hx-delete="/fade_out_demo" hx-confirm="Are you Sure?" hx-swap="outerHTML" hx-target="#container">
+//	            <button type="submit">Delete Account</button>
+//	        </form>
+//	    </div>
+//	}
 func DeleteAdnConfirm() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
@@ -29,7 +36,7 @@ func DeleteAdnConfirm() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div id=\"container\"><form hx-delete=\"/fade_out_demo\" hx-confirm=\"Are you Sure?\" hx-swap=\"outerHTML\" hx-target=\"#container\"><button type=\"submit\">Delete Account</button></form></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div id=\"container\" hx-confirm=\"Are you Sure?\"><form hx-delete=\"/fade_out_demo\" hx-swap=\"outerHTML\" hx-target=\"#container\"><button type=\"submit\">Delete Account one</button></form><form hx-delete=\"/fade_out_demo\" hx-confirm=\"unset\" hx-swap=\"outerHTML\" hx-target=\"#container\"><button type=\"submit\">Delete Account two</button></form></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

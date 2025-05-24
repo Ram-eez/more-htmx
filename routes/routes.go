@@ -25,4 +25,7 @@ func RegisterRoutes(router *gin.Engine) {
 	router.POST("/delete_button", handlers.GetRestoreButton)
 
 	router.GET("/refresh", handlers.OobSwap)
+
+	router.GET("/about", handlers.AboutPage)
+	router.GET("/contact", handlers.ContactPage)
 }

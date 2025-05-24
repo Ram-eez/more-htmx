@@ -79,3 +79,11 @@ func GetDeleteButton(c *gin.Context) {
 func OobSwap(c *gin.Context) {
 	components.ResponseDiv().Render(c.Request.Context(), c.Writer)
 }
+
+func AboutPage(c *gin.Context) {
+	components.About().Render(c.Request.Context(), c.Writer)
+}
+
+func ContactPage(c *gin.Context) {
+	components.Contact().Render(c.Request.Context(), c.Writer)
+}
